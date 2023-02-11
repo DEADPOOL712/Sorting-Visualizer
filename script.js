@@ -1,5 +1,3 @@
-// new commnet add
-
 // declaration and element selection
 const bars = document.querySelectorAll(".main-container-right div");
 const newArrayBtn = document.querySelector(".new-btn");
