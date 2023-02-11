@@ -1,0 +1,41 @@
+/* ! ==== BUTTONS ==== */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap");
+.custom-btn {
+  font-family: "Merriweather Sans", sans-serif;
+  height: 3.2rem;
+  width: 18rem;
+  display: block;
+  margin: auto;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 1px 7px #b2b2b2;
+}
+.custom-btn:not(:first-child) {
+  margin-top: 0.6rem;
+}
+.new-btn {
+  background-color: #4cd3c2;
+}
+.custom-btn:hover {
+  box-shadow: 0 1px 7px #b2b2b2;
+}
+.custom-btn:active {
+  box-shadow: none;
+}
+
+form {
+  padding: 7%;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 700;
+  font-size: 13.333px;
+  text-transform: capitalize;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}

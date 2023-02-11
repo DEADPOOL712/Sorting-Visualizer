@@ -1,4 +1,5 @@
 async function selectionSort() {
+  disableButton();
   for (let i = 0; i < bars.length; i++) {
     let lowest = i;
     bars[i].style.background = "red";
@@ -6,18 +7,17 @@ async function selectionSort() {
       if (
         parseInt(bars[j].style.height) < parseInt(bars[lowest].style.height)
       ) {
-        bars[j].style.background = "blue";
+        bars[j].style.background = "#3C4048";
         await waitforme(delay);
-        bars[j].style.background = "cyan";
+        bars[j].style.background = "#c6c6c6";
         lowest = j;
       }
     }
     if (lowest !== i) {
-      // Swap
-      // ;[arr[i], arr[lowest]] = [arr[lowest], arr[i]]
       swap(bars[i], bars[lowest]);
     }
-    bars[i].style.background = "#16ff16";
+    bars[i].style.background = "#4CD3C2";
   }
+  newArrayBtn.disabled = false;
 }
 sortingBtn[2].addEventListener("click", selectionSort);

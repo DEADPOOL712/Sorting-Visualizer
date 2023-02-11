@@ -6,13 +6,28 @@ const sortingBtn = document.querySelectorAll(".sorting-btn");
 let delay = 160;
 let temp;
 
+// disable button
+const disableButton = function () {
+  newArrayBtn.disabled = true;
+  sortingBtn.forEach((btn) => {
+    btn.disabled = true;
+  });
+};
+// enable button
+const enableButton = function () {
+  sortingBtn.forEach((btn) => {
+    btn.disabled = false;
+  });
+};
+
 // generating random height of bars
 function generateBars() {
   bars.forEach(function (bar) {
-    const randomHeight = Math.floor(Math.random() * 550) + 5;
+    const randomHeight = Math.floor(Math.random() * 500) + 50;
     bar.style.height = `${randomHeight}px`;
-    bar.style.background = "cyan";
+    bar.style.backgroundColor = "#c6c6c6";
   });
+  enableButton();
 }
 generateBars();
 
@@ -28,29 +43,6 @@ newArrayBtn.addEventListener("click", generateBars);
 // speed handaling
 speedRange.addEventListener("change", changeSpeed);
 speedRange.addEventListener("mousemove", changeSpeed);
-
-// disable buttons
-function disableAll() {
-  newArrayBtn.removeEventListener("click", generateBars);
-  newArrayBtn.style.boxShadow = "none";
-  newArrayBtn.style.color = "rgb(116,116,116,0.5)";
-  sortingBtn.forEach((btn) => {
-    btn.style.boxShadow = "none";
-    btn.style.color = "rgb(116,116,116,0.5)";
-  });
-  sortingBtn[0].removeEventListener("click", bubble);
-}
-// enable buttons
-function enableAll() {
-  newArrayBtn.addEventListener("click", generateBars);
-  newArrayBtn.style.color = "black";
-  newArrayBtn.style.boxShadow = "1px 1px 3px red";
-  sortingBtn.forEach((btn) => {
-    btn.style.boxShadow = "1px 1px 3px green";
-    btn.style.color = "black";
-  });
-  sortingBtn[0].addEventListener("click", bubble);
-}
 
 // aysnc function for animation so we can see bars moving
 function waitforme(milisec) {
