@@ -1,1 +1,1 @@
-<h1>Sorting Visualizer</h1>
+### Sorting Visualizer
